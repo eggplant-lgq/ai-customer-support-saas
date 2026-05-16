@@ -1,0 +1,18 @@
+# This file is an example for local network adaptation.
+# Copy it to docker-compose.override.yml when Docker Hub is unstable in your network.
+# Do not commit docker-compose.override.yml because it is machine-specific.
+#
+# Why not edit docker-compose.yml directly?
+# - docker-compose.yml should describe the project's official dependencies.
+# - docker-compose.override.yml should describe local machine/network differences.
+#
+# Usage:
+#   cp docker-compose.override.example.yml docker-compose.override.yml
+#   docker compose up -d postgres
+
+services:
+  postgres:
+    image: m.daocloud.io/docker.io/library/postgres:16-alpine
+
+  redis:
+    image: m.daocloud.io/docker.io/library/redis:7-alpine

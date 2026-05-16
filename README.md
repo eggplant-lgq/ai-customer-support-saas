@@ -27,7 +27,14 @@ pnpm dev
 
 然后打开 [http://localhost:3000](http://localhost:3000)。
 
-> 当前设备还没有检测到 Docker 命令。Mac/Windows 都建议安装 Docker Desktop，之后再执行 `docker compose up -d`。
+如果 Docker Hub 在当前网络下不稳定，先复制本地 override 示例：
+
+```bash
+cp docker-compose.override.example.yml docker-compose.override.yml
+docker compose up -d
+```
+
+`docker-compose.yml` 保持官方镜像名，`docker-compose.override.yml` 只用于本机网络适配，不提交到 Git。
 
 ## 跨设备继续学习
 
