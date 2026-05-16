@@ -1,5 +1,40 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Codex 协作规则
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+这个仓库是“AI 客服知识库 SaaS 后台 + 长期学习系统”。Codex 在每次开始工作前都必须先读本文件、`README.md` 和 `docs/obsidian/01-当前状态.md`。
+
+## 交流方式
+
+- 全程使用中文交流。
+- 关键英文概念保留原词，并用中文解释。
+- 面向有前端经验的学习者，跳过基础 React/Vue 语法，重点解释后端、AI、工程规范和真实业务取舍。
+- 先解释，再设计，再实现，再验证，再复盘。
+
+## 工程原则
+
+- 优先使用项目已有技术栈：Next.js App Router、TypeScript、Tailwind CSS、shadcn/ui 风格组件、Prisma、PostgreSQL/pgvector、Redis。
+- 不把真实密钥写入仓库；只维护 `.env.example`。
+- 每次修改环境、脚本、数据库 schema 或学习阶段，都要更新 Obsidian 当前状态。
+- 不为了教学写玩具代码；即使是第一阶段，也要保留真实项目会需要的边界和命名。
+
+## Codex 陪跑流程
+
+每次任务开始：
+
+1. 读取项目状态。
+2. 说明本次要学的概念。
+3. 给出本次验收标准。
+4. 再开始实现或引导用户实操。
+
+每次任务结束：
+
+1. 总结完成内容。
+2. 标出值得复习的代码位置。
+3. 更新 `docs/obsidian/01-当前状态.md`。
+4. 必要时新增学习日志或架构决策。
+
+## AI 协作要求
+
+- 需求不清时先澄清，但能从代码和文档推断的事实不要问用户。
+- 写代码前先读相关文件。
+- 修改代码后运行可行的检查命令。
+- 做 review 时优先指出 bug、风险、测试缺口和可维护性问题。
